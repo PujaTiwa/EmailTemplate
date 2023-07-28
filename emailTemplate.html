@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Template</title>
+
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/pdf-lib@1.4.0"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <script
+      src="https://use.fontawesome.com/releases/vVERSION/js/all.js"
+      data-auto-add-css="false"
+    ></script>
+    <link
+      href="https://use.fontawesome.com/releases/vVERSION/css/svg-with-js.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #34495e;
+      font-family: "Poppins", sans-serif;
+      max-width: 700px;
+      padding: 20px 15px;
+      margin: 10px auto;
+      min-height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      background: #fff;
+      padding: 30px;
+      line-height: 30px;
+      border-radius: 3px;
+      /* min-height: 100vh; */
+    }
+
+    .top-mid {
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 1.6rem;
+    }
+
+    .brdr {
+      text-align: center;
+      margin: 2rem 0;
+      background-color: #535353;
+      /* padding: 6rem; */
+      color: #fff;
+      font-size: 24px;
+      min-width: 600px;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1.head-top {
+      padding: 0.6rem 0 1rem 4rem;
+      font-family: cursive;
+      color: #f42384;
+    }
+
+    .top-mid {
+      margin-top: 1rem;
+    }
+
+    .top-mid h1 {
+      font-size: 28px;
+    }
+
+    .top-mid div.icon {
+      background: #535353;
+      margin: 1rem 0 1.6rem;
+      min-height: 300px;
+      min-width: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 24px;
+    }
+
+    .btn {
+      padding: 10px 22px;
+      background: orangered;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      margin: 12px 0 20px 0;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: 0.5s;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: orange;
+      font-size: 1.2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      gap: 1rem;
+      margin: 1.6rem 0 1.4rem;
+    }
+
+    .color {
+      background: #535353;
+      color: #d4d4d4;
+      font-size: 18px;
+      min-width: 238px;
+      min-height: 222px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 3px;
+    }
+
+    .right h2 {
+      font-size: 1.4rem;
+    }
+
+    .right p {
+      letter-spacing: 1px;
+      font-size: 14px;
+    }
+
+    hr {
+      height: 2px;
+      background: black;
+    }
+
+    .bottom {
+      text-align: center;
+    }
+
+    .bottom p {
+      margin-top: 14px;
+      font-weight: 600;
+    }
+
+    .bottom span {
+      color: #308eb9;
+      font-weight: 600;
+    }
+
+    .bottom-part {
+      margin: 12px 52px;
+    }
+
+    h1.mid-part {
+      font-family: cursive;
+      font-size: 2rem;
+      fill: #f05555;
+      filter: drop-shadow(0px 6px 4px rgba(219, 71, 45, 0.25));
+      width: 245px;
+      height: 84px;
+    }
+
+    h1 span {
+      color: #f42384;
+      line-height: 1.5;
+    }
+
+    .bottom-part p {
+      margin: 1rem 0;
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    footer .social {
+      display: flex;
+    }
+
+    footer .social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 40px;
+      border-radius: 50%;
+      color: white;
+      margin-right: 0.8rem;
+      transition: all 0.5s ease;
+      margin-top: 1.6rem;
+      text-decoration: none;
+      font-size: 20px;
+      text-align: center;
+      border: 2px solid #c2bfbf;
+    }
+
+    footer .social a:hover {
+      background: #f42384;
+    }
+
+    footer .social a i {
+      width: 100%;
+      height: 100%;
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    footer p {
+      text-align: center;
+      margin-top: 1rem;
+      color: #e9e9e9;
+      font-size: 1rem;
+      font-family: cursive;
+    }
+
+    footer p a {
+      color: #f42384;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <h1 class="head-top">Canon</h1>
+
+      <hr />
+      <div class="brdr">600 x 300</div>
+      <div class="header">
+        <div class="bottom-part">
+          <h1 class="mid-part">LOREM <br /><span>IPSUM DOLOR</span></h1>
+          <p>
+            Lorem ipsum dolor, Lorem ipsum dolor Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit. Commodi hic iste repellendus est quam
+            animi odio fuga voluptates culpa maiores.sit, amet consectetur
+            adipisicing elit. Deleniti eius blanditiis odio reiciendis dolorum
+            quos doloribus non, eaque doloremque numquam. Lorem ipsum dolor sit
+            amet consectetur adipisicing elit. Animi laudantium accusantium
+            mollitia itaque neque et facere nostrum delectus tempore ipsa!sit
+            amet consectetur adipisicing elit. Distinctio aperiam incidunt vitae
+            explicabo facilis perferendis corrupti commodi eveniet ipsa quasi!
+          </p>
+          <button class="btn">Get Started</button>
+        </div>
+      </div>
+      <hr />
+      <div>
+        <div class="logo">
+          <!-- <div class="left-icon"><i class="fa fa-regular fa-envelope"></i></div> -->
+          <div class="color">238 x 222</div>
+          <div class="right">
+            <h2>Highly comatible</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia,
+              dicta?Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Eos aut exercitationem minima
+              deserunt ratione unde ex iste sequi eius reprehenderit.
+            </p>
+          </div>
+        </div>
+        <div class="logo">
+          <!-- <div class="left-icon"><i class="fa fa-regular fa-envelope"></i></div> -->
+          <div class="color">238 x 222</div>
+          <div class="right">
+            <h2>Designer friendly</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia,
+              dicta?Lorem ipsum dolor sit amet. Lorem, ipsum dolor sit amet
+              consectetur adipisicing elit. Mollitia libero totam, officiis
+              suscipit illum architecto deleniti quod velit facilis
+              perspiciatis?
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="top-mid">
+        <h1>Get this responsive email template</h1>
+        <p>Lorem ipsum dolor sit Lorem ipsum dolor sit amet.</p>
+        <div class="icon">600 x 300</div>
+      </div>
+      <hr />
+      <div class="bottom">
+        <p>Have a question?</p>
+        <span>contactSupport@gmail.com</span>
+      </div>
+    </div>
+
+    <footer>
+      <div class="social">
+        <a href="#" target="_blank"><i class="fa fa-github"></i></a>
+        <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+        <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+      </div>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam, harum
+        vel provident quibusdam earum, autem quis recusandae excepturi magnam
+        sunt officia illum doloribus <a href="#">ContactSupport</a> rem error ad
+        fugit explicabo. Sit, laborum?
+      </p>
+    </footer>
+  </body>
+</html>
